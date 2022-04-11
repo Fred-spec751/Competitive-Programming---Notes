@@ -24,8 +24,11 @@ sort(arr, arr + n, compareInterval);
 
 
 <h2>Tipos de DP</h2>
-> Top down: es con la tabla de memorización los resultados de los sub problemas para cuando aparezaca de nuevo tan solo acceder al resultado y no tener que computarlo. Usa backtracking.
-
-> Bottom up: método de tabular, usa una tabla DP y su dimensión es igual a la cantidad de parámetros necesario para representar un estado. Su modo de implementar es usando loops anidados.
-	a. Versión en donde los valores son almacenados en la celdas de la tabla DP
-	b. Versión de un array de booleanos donde los resultados son usados como índices mientras que el valor es true or false.
+Top down: es con la tabla de memorización los resultados de los sub problemas para cuando aparezaca de nuevo tan solo acceder al resultado y no tener que computarlo. Usa backtracking.
+<br>
+Bottom up: método de tabular, usa una tabla DP y su dimensión es igual a la cantidad de parámetros necesario para representar un estado. Su modo de implementar es usando loops anidados.
+Habrá dos versiones:
+<ul>
+	<li>Versión en donde los valores son almacenados en la celdas de la tabla DP</li>
+	<li>Versión de un array de booleanos donde los resultados son usados como índices mientras que el valor es true or false.</li>
+</ul>
