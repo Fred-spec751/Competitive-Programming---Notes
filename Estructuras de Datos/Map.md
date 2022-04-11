@@ -30,7 +30,7 @@ Esto mismo se observa en el caso anterior donde era usado un vector como llave, 
 de ocurrencias de esos 5 números alojados en el vector.
 
 Es posible sobrexplotar esta característica de llave al momento de proponer como "key's" clases:
-<br><img src="./Images/1.png"><br>
+<br><img src="./Images/1.jpg"><br>
 
 <h2>Funciones en Map</h2>
 
