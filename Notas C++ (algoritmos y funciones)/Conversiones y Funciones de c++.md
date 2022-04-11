@@ -37,12 +37,18 @@ Así me evito trabajar con decimales y tener que lidiar con errores raros.
 <h2>Lectura cuando la cantidad de números en la entrada van variando</h2>
 
 1 1
+
 2 3 48
+
 3 89 1 1
+
 4 74 2 9 3
+
 5 11 1 1 10 
 
+
 Code:
+
 	int k;      // Test cases
         scanf("%d\n",&k);
         for(int i =0;i<k;i++)
