@@ -38,5 +38,6 @@ en el mismo conjunto.
 Esto mismo se entiende debido a que el representante tal cual será el que esté enfrente de todo el conjunto, por eso será lo único que se deberá de checar.
 
 
-<h2>Implementación</h2>
-
+<h2>Implementación (Handbook programming competitive)</h2>
+Esta implementación consiste en primero realizar dos vectores, uno en donde se estarán almancenando los conjuntos y otro en donde se tenga los representantes de cada
+conjunto, lo cual será de gran ayuda al momento de realizar las operaciones.
