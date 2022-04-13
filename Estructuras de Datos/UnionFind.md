@@ -39,5 +39,66 @@ Esto mismo se entiende debido a que el representante tal cual será el que esté
 
 
 <h2>Implementación (Handbook programming competitive)</h2>
-Esta implementación consiste en primero realizar dos vectores, uno en donde se estarán almancenando los conjuntos y otro en donde se tenga los representantes de cada
-conjunto, lo cual será de gran ayuda al momento de realizar las operaciones.
+<h3>Declaración de vectores</h3>
+Esta implementación consiste en primero realizar dos vectores, uno en donde se estarán almancenando los conjuntos y otro vector en donde indique para cada 
+elemento representativo el tamaño de su correspondiente conjunto.
+
+Entendiendo esto, el primer vector se podrá entonces ver de la siguiente manera:
+            
+            vector<int> cadenas;
+
+De modo que, como se comentó anteriormente, los conjuntos se puede ver como una cadena (aristas) las cuales estén uniendo a otros elementos, en fin un grafo. Por lo
+cual, se deberá de tener en cuenta que entonces esta cadena en sí se puede interpretar como la implementación de un grafo por medio de un arreglo, esto es debido 
+a que al contener los elementos de los conjuntos la manera en que lo realizará será usando como llave un "elemento" y el resultado será el elemento al que está 
+conectado, es por esto mismo que se dice que es una cadena de modo que siguiendo la cadena podemos encontrar facilmente el valor representativo y cuidando el tamaño
+la complejidad deberá ser O(log(n)).
+
+Entonces, este vector podría interpretarse de igual forma como una especie de mapa debido a la función que le estamos dando al final como un arreglo asociativo:
+Supongamos que tenemos lo siguiente:
+      4
+     /
+    /
+   3
+    \
+     \
+      \
+       2
+De modo que al tener nuestro vector de cadena y querer saber el representativo del elemento 2 se tendrá lo siguiente:
+
+            next_element = chain[element];
+            
+            //Esto en términos de entender, puesto que una implementación real sería de la siguiente forma: 
+            element = chain[element]; 
+            
+Entonces, tenemos que el vector cadena es para poder conocer el elemento que se tiene asociado al elemento actual, por lo cual lo siguiente será entender cómo es que
+se iniciliza tal cosa, y es que en un inicio no tenemos ningún elemento unido puesto que todos se encuentran disjuntos y esto nos da a pensar que en sí el siguiente
+elemento que le sigue al elemento es el mismo y esto cambiará conforma vayamos uniendo elemento. De aquí mismo podemos deducir que, entonces, el tamaño de cada 
+conjunto será 1, y en un principio se tendrá que los representantes de los elementos son ellos mismos debido a que en un principio todos están disjuntos.
+            
+            // Declaración de los vectores
+            vector<int> c; //Para las cadenas
+            vector<int> s; //Tamaño de cada conjunto
+            
+            for(int i=1;i<=n_elements;i++) c[i] = i; // El representante en un inicio de cada conjunto es el mismo número.
+            for(int i=1;i<=n_elements;i++) s[i] = 1; // El tamaño de cada conjunto es 1, debido a que está compuesto por el mismo cada conjunto en un inicio.
+           
+<h3> Find </h3>
+Una vez con los elementos podemos hacer la función de Find, encontrar, y recordando lo visto anteriormente la manera de encontrar un conjunto será por medio de su 
+representante así que al tener ya un vector cadena que me diga el siguiente elemento del elemento actual lo único que tengo que hacer es iterar sobre estos hasta 
+llegar que el elemento actual sea igual al siguiente elemento, o sea:
+            
+            //Por ejemplo:
+            3 == v[next_element]
+            3 == 3
+          
+Cuando tenemos que el siguiente elemento es el mismo elemento actual significa que se ha llegado al representante debido a que el siguiente elemento o el elemento
+asociado al representante es el mismo, si asumimos que la longitud de la cadena es O(log(n)) entonces esta función será de igual complejidad:
+
+            int find(int element)
+                  {
+                        while(element != c[element])
+                           element = c[element];
+                        
+                        return element;
+                  }
+
