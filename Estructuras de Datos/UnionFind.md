@@ -102,3 +102,42 @@ asociado al representante es el mismo, si asumimos que la longitud de la cadena 
                         return element;
                   }
 
+Entonces, la función me estará regresando los representantes de cada conjunto.
+
+<h3> IsSameSet </h3>
+Como se comentó anteriormente, para distinguir entre un conjunto de otro será por medio de los representantes de modo que para saber si un elemento pertenece al mismo
+conjunto que otro elemento bastará solo con confirmar que ambos elementos tienen el mismo representante y esto mismo se logra por medio de la función find().
+
+            bool isSameSet(int a, int b)
+                  {
+                        return find(a)==find(b);
+                  }
+
+<h3> unionSet </h3>
+Esta función será tal cual unir los conjuntos y la manera de hacer esto será uniendo a los representantes de los conjuntos deseados, por lo cual primera sería 
+apropiado que se revise que ambos elementos en efecto correspondan a diferentes conjuntos y para esto se podrá usar la función isSameSet().
+
+Lo siguiente a contemplar será encontrar los representantes de los conjuntos, esto es debido a que normalmente para unir dos conjuntos lo que nos darán será dos números, por lo cual deberemos encontrar los representantes de esos números dados ya que nada nos garantiza que dados esos dos números sean realmente los representantes y esto se logra por medio de la función fund().
+
+Finalmente se deberá de hacer la comparación de los tamaños y esto es con el motivo de mantener pequeño la cadena (o grafo) y procurar una complejidad de O(log(n)), y para esto es que se usa el arreglo declarado en un inicio que era el tamaño de las cadenas, así que se deberá de hacer la unión del conjunto más pequeño se une con el conjunto que sea más grande. Para esto tendremos dos casos: el conjunto A es más grande o el conjunto B es más grande. Una vez encontrado realizado esto ya solo se necesitará de realizar la unión de estos y la forma de realizar la unión será precisamente con el arreglo de cadenas, el que me esté guardando la unión de los elementos.
+
+            void unionSet(int a, int b){
+                
+                if(!isSameSet(a,b)){
+                    
+                    int rA = find(a);
+                    int rB = find(b);
+                    
+                    if(s[rA] < s[rB]){
+                       p[rA] = rB;  
+                       s[rB] += s[rA];
+                    }
+                    else{
+                       p[rB] = rA;  
+                       s[rA] += s[rB];
+                    }
+                }
+                return;
+            }
+
+Es posible hacer otras funciones las cuales derivan simplemente de las anteriores realmente.
