@@ -5,7 +5,7 @@
 Union Find es una estructura de datos que mantiene una colección de conjuntos disjuntos, los conjuntos no pertenecen a más de un conjunto.
 
 Entonces, esta estructura será para unir conjuntos los cuales pueden lucir de esta forma:
-<img src="./Images/2.jpeg">
+<img src="./Images/2.jpeg" widht="10px">
 
 De aquí mismo se observa que hayh conjuntos en forma de vértices, como tipo sub grafos, entonces será posible realizar la unión de estos con la estructura y para realizar
 esto es deberá de tener en cuenta que de cada conjunto va a existir un elemento que represente a dicho conjunto, en este caso dicho representante es el vértice que está 
