@@ -46,6 +46,6 @@
       
    Lo siguiente a realizar será entender lo que va a suceder con los demás casos y es que se deberá de realizar el mismo razonamiento debido a que se deberá de comparar de modo que se presentará las diferentes operaciones que se deberá de realizar para hacer que un String B llega a ser un String A.
    
-   Cada caracter deberá de compararse 
+   Cada caracter deberá de compararse con el otro carácter del otro String, y en sí se podría pensar que no va a importar en sí la operación a realizar puesto que finalmente las oepraciones tiene un valor de 1, excepto cuando son iguales, y la 
     
   
