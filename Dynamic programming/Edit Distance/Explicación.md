@@ -44,6 +44,8 @@
         L O V E
       _ 1 2 3 4
       
-   Lo siguiente a realizar será entender que 
+   Lo siguiente a realizar será entender lo que va a suceder con los demás casos y es que se deberá de realizar el mismo razonamiento debido a que se deberá de comparar de modo que se presentará las diferentes operaciones que se deberá de realizar para hacer que un String B llega a ser un String A.
+   
+   Cada caracter deberá de compararse 
     
   
