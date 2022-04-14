@@ -26,3 +26,24 @@
   de situaciones con su respectiva forma de actuar, por lo cual estos los ingredientes para un problema con solución DP.
   
   La forma de abordar esto será por medio de la siguiente observación que es por medio de los casos bases.
+  
+  <h2>Casos Base</h2>
+  Los casos base a ver es haciendo que cada cadena que se tiene, String 1 y String 2, deben ser comparados en un inicio con un String vacío o simplemente con un vacío y esto es para obtener los casos base. De modo que al realizar la comparación de un String con uno vacío la única forma que los dos sean igual será removiendo los carácteres del String de modo que esto generará que haya 1 costo por lo menos, o sea una operación en cada carácter para poder eliminarlo teniendo al final que las operaciones totales será igual a la longitud del String.
+  <hr>
+  Ejemplo con MOVIE y LOVE:
+      
+        _
+      M 1 
+      O 2
+      V 3
+      I 4
+      E 5
+      
+   De forma similar tendremos para el otro String:
+   
+        L O V E
+      _ 1 2 3 4
+      
+   Lo siguiente a realizar será entender que 
+    
+  
