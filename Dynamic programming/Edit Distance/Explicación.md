@@ -119,3 +119,5 @@
    
    Finalmente la solución queda en la última posición de la tabla, o sea en la esquina inferior derecha.
       
+   Para reconstruir la solución simplemente se tendrá que seguir el camino el cual estará constituido por los valores más pequeños, usualmente tiene forma de diagonal, en este caso sería: 2-2-1-1-1.
+   
