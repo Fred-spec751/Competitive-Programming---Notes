@@ -27,3 +27,46 @@
   y para esto se debe de comprobar que las monedas no estén excediendo del número solicitado, lo cual está sucediendo aquí debido a que todas sobrepasan a 1, por lo 
   cual nos debemos de 
 </p>
+
+
+### Implementación
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+long long INF = 1e9;
+
+int main() {
+	// your code goes here
+	
+	int n; cin>>n;
+	int t; cin>>t;
+	vector<int> v(n+1);
+	
+	vector<int> dp(t+1,INF);
+	dp[0] = 0;
+	
+	for(int i=0;i<n;i++)
+	    {
+	         cin>>v[i];
+	    }
+	
+	// Parte de dp
+	for(int i=1;i<=t;i++)
+	    {
+	        for(int j=0;j<n;j++){
+	            if(v[j]<=i && (dp[i-v[j]] + 1)<dp[i] )
+	                {
+	                    dp[i] = dp[i-v[j]] + 1;
+	                }
+	        }
+	    }
+	
+	// ans
+	if(dp[t] == INF)    cout<<"No Solution.";
+	else cout<<dp[t];
+	
+	return 0;
+}
+
+```
