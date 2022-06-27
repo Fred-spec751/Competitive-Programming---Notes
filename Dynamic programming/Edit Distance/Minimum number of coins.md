@@ -46,9 +46,9 @@ for(int i=1;i<=t;i++)
 Se debe de obsservar que el primer ciclo for será para construir todas las soluciones de cada número hasta llegar al target, debido a que para construir la siguiente
 	solución debemos de apoyarnos en las soluciones anteriores.
 	
-	Mientras que el segundo ciclo es para repasar sobre todas las monedas que tenemos en la lista y checar si conviene o no.
+Mientras que el segundo ciclo es para repasar sobre todas las monedas que tenemos en la lista y checar si conviene o no.
 	
-	Finalmente el código completo sería:
+Finalmente el código completo sería:
 </p>
 
 ### Implementación
