@@ -25,9 +25,31 @@
   
   Entonces, para poder cumplir con 1 lo que se deberá de hacer es usar más monedas y supongamos que tenemos 4,3,6 así que debemos de checar todas las monedas posibles 
   y para esto se debe de comprobar que las monedas no estén excediendo del número solicitado, lo cual está sucediendo aquí debido a que todas sobrepasan a 1, por lo 
-  cual nos debemos de 
+  cual nos debemos de preguntar si la moneda actual no sobrepasa a la suma solicitada y si esa solución es mejor que la anterior, debido a que vamos a estar 
+  construyendo la solución y mejorando así que la condición quedaría
+  
 </p>
 
+```c++
+for(int i=1;i<=t;i++)
+	    {
+	        for(int j=0;j<n;j++){
+	            if(v[j]<=i && (dp[i-v[j]] + 1)<dp[i] )
+	                {
+	                    dp[i] = dp[i-v[j]] + 1;
+	                }
+	        }
+	    }
+```
+
+<p>
+Se debe de obsservar que el primer ciclo for será para construir todas las soluciones de cada número hasta llegar al target, debido a que para construir la siguiente
+	solución debemos de apoyarnos en las soluciones anteriores.
+	
+	Mientras que el segundo ciclo es para repasar sobre todas las monedas que tenemos en la lista y checar si conviene o no.
+	
+	Finalmente el código completo sería:
+</p>
 
 ### Implementación
 ```c++
