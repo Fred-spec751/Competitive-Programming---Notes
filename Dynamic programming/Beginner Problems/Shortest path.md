@@ -24,14 +24,23 @@ int main() {
 	    }
 	
 	// Dp
+	// El caso base sería iniciar desde el vértice 1
+    	vector<vector<int>> dp(n+1);
+	dp[1]
+	
 	for(int i=0;i<n;i++)
 	    {
 	        for(int j=0;j<n;j++)
 	            {
-	                
+	                for(int k=0;k<n;k++)
+        	            {
+        	                // Entre todos los vértices adyacentes se toma el que tiene el camino más corto.
+        	                
+        	            }
 	            }
 	    }
 	
 	return 0;
 }
+
 ```
