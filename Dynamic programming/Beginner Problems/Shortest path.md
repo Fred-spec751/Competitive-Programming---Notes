@@ -1,4 +1,4 @@
-<h1 align="center">Minimum number of coins</h1>
+<h1 align="center">Shortest path - Dp</h1>
 <p>
   <h3>Problema</h3>
   
