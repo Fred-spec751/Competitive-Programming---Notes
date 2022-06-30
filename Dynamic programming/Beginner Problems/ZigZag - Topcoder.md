@@ -1,3 +1,8 @@
+<h1 align="center">Minimum number of coins</h1>
+<p>
+<h3>ZigZag – 2003 TCCC Semifinals 3</h3>
+
+</p>
 
 ```c++
 #include <bits/stdc++.h>
