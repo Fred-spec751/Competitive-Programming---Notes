@@ -15,10 +15,13 @@ int main() {
 	    }
 	
 	// Parte de DP
-	vector<int> dp(n,1);
+	vector<vector<int>> dp(n+1,vector<int>(n+1,0));    // Se necesita considerar tanto el positivo como negativo
 	int maximo = 0;
 	
-	int postive = 0, negative=0;
+	// Casos base: tener inicializado cuando es positivo y negativo
+	dp[0][0] = 1; // positivo
+	dp[0][1] = 1; // negativo
+	
 	
 	// Doble ciclo for
 	// El primero recorre todo
@@ -27,31 +30,30 @@ int main() {
 	        for(int j=0;j<i;j++)
 	            {
 	                // Negativo
-	                if( ((v[i] - v[j]) < 0) && ((postive==0 && negative==0) || (postive==1 && negative==0)) )
+	                if( ((v[i] - v[j]) < 0)  )
 	                    {
-	                        if(dp[j]+1 > dp[i])
+	                        if((dp[j][0]+1 > dp[i][1]))   // Se añade al positivo uno negativo
 	                            {
-	                                dp[i] = dp[j]+1;
-	                                postive=0;
-	                                negative=1;
+	                                dp[i][1] = dp[j][0]+1;    // En caso de que aumentó se actualiza
 	                            }
 	                    }
 	                
 	                // Positivo
-	                if( ((v[i] - v[j]) > 0) && ((postive==0 && negative==0) || (postive==0 && negative==1)) )
+	                if( ((v[i] - v[j]) > 0) )
 	                    {
-	                        if(dp[j]+1 > dp[i])
+	                        if((dp[j][1]+1 > dp[i][0]) )
 	                            {
-	                                dp[i] = dp[j]+1;
-	                                postive=1;
-	                                negative=0;
+	                                dp[i][0] = dp[j][1]+1;
 	                            }
 	                    }
+	                    
 	                
 	            }
+            maximo =  max(maximo,max(dp[i][0],dp[i][1]));  
 	    }
 	
-	cout<<dp[n-1];
+	cout<<maximo;
 	return 0;
 }
+
 ```
