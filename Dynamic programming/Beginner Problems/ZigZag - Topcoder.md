@@ -1,6 +1,6 @@
-<h1 align="center">Minimum number of coins</h1>
+<h1 align="center">ZigZag – 2003 TCCC Semifinals 3</h1>
 <p>
-<h3>ZigZag – 2003 TCCC Semifinals 3</h3>
+<h3>Problema</h3>
 
 </p>
 
