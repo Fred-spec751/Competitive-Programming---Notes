@@ -29,3 +29,53 @@
   
   
 </p>
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	// your code goes here
+	
+	int n; cin>>n;
+	vector<int> v(n+1,0);
+	
+	for(int i=0;i<n;i++)
+	    {
+	        cin>>v[i];
+	    }
+	
+	// Dp
+	vector<int> dp(n+1,0);
+	vector<int> dp2(n+1);
+	
+	
+	// Casos base
+	dp[0] = v[0];
+	if(n>1) dp[1] = max(v[0],v[1]);
+	if(n>2){
+	    n--;    
+	    for(int i=2;i<(n);i++)
+    	    {
+    	        // Se compara tanto la secuencia iniciando en el segundo como con el primer elemento 
+    	        dp[i] = max(dp[i-2]+v[i], dp[i-1]);
+    	    }
+	} 
+	
+	v.erase(v.begin());
+	
+	dp2[0] = v[0];
+	if(n>1) dp2[1] = max(v[0],v[1]);
+	if(n>2){
+	    for(int i=2;i<(n);i++)
+    	    {
+    	        // Se compara tanto la secuencia iniciando en el segundo como con el primer elemento 
+    	        dp2[i] = max(dp2[i-2]+v[i], dp2[i-1]);
+    	    }
+	} 
+	
+	cout<<max(dp[n-1],dp2[n-1]);
+	
+	return 0;
+}
+```
