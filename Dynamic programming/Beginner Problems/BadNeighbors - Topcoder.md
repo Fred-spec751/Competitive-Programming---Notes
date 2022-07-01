@@ -25,11 +25,7 @@
   podemos tomar 7 y así conseguir una recaudación valida, ya solo faltaría por hacer que esta recaudación sea la maxima.
   
   <h3>Interpretación</h3>
-  Lo que se puede intentar será primero generar todas las sumas posibles por medio de dos ciclos for respetando los siguientes condiciones
+  Para empezar con la solución se debe obsevar que siempre se va iniciar con el primer número de la lista o con el segundo número de la lista, ya que esto resulta fundamental para iniciar con la solución. Porque si arrancamos con el tercero o cuarto número de la lista nos vamos a estar perdiendo de una ganancia anterior, así que de esta manera podemos identificar los casos base.
   
-      if( j!=i-1 &&  j!=i+1 )
-    // De igual manera se deberá de comprobar en caso de que sean el último o primer vecino.
-      if( i==0 && (j!=len_array-1) )
   
-  Estas condiciones las podemos tener para realizar la suma y que sea valida.
 </p>
