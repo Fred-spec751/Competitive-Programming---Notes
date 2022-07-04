@@ -11,13 +11,13 @@
   iniciales. 
   
   Entonces, lo que se hace es iniciar con un estado, el estado inicial es el primer paso que se debe de dar en este tipo de problemas y para esto se debe de hacer
-  observaciones al problema y en este caso el estado inicial será cuando es solicitado crear una suma de 0 lo cual nosotros ya sabemos que para esto la respuesta será 
+  observaciones al problema, y en este caso, el estado inicial será cuando es solicitado crear una suma de 0 lo cual nosotros sabemos que para esto la respuesta será 
   siempre 0, o sea que se necesita de 0 monedas para crear una suma de 0:
   
   dp[0] = 0       ->  Estado inicial
   
   Por lo cual podemos dejar las otras casillas del arreglo con un valor indefinido debido a que seguimos desconociendo la cantidad de monedas para realizar dicha
-  suma, y este valor indefinido bien puede entenderse como un valor INF, o sea algo como 1e18.
+  suma, y este valor indefinido bien puede entenderse como un valor INF, o sea algo como 1e18 (un valor muy grande).
   
   Hasta acá tenemos los estados iniciales y lo siguiente será ver que sucederá en la siguiente posición, o sea: dp[1]. Para esto se tendrá que hacer uso de alguna moneda,
   debido a que con cero monedas somos incapaces de poder cumplir con 1. Algo que también se debe de observar es que los índices nos van a servir para crear las sumas 
