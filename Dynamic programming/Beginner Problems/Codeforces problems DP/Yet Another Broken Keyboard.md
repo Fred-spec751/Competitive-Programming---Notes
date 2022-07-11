@@ -1,3 +1,4 @@
+```c++
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -47,3 +48,4 @@ int main() {
     cout<<dp[t]<<endl;
 	return 0;
 }
+```
