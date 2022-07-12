@@ -21,7 +21,8 @@ int main() {
     vector<int> dp(n+1,-1e9);
     dp[0]=0;
     
-    // First loop for coins value
+    // First loop for 1 to n
+    // Second loop for coins value
     vector<vector<int>> limit(4000+5,vector<int>(4000+5,1));
     
     for(int i=1;i<=n;i++)
@@ -31,7 +32,7 @@ int main() {
                     if(coins[j]<=i && (dp[i-coins[j]] + 1)>dp[i])
                         {
                             dp[i] = dp[i-coins[j]]+1;
-                            //limit[coins[j]][i-coins[j]]--; && (limit[coins[j]][i-coins[j]]>=1)
+                            //limit[coins[j]][i-coins[j]]--; && (limit[coins[j]][i-coins[j]]>=1) Nothing
                         }
                 }
         }
