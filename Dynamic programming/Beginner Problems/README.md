@@ -81,34 +81,49 @@
 
 
 <div align="center">
-  
-  
-| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+ | INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
 |---|---|---|---|---|---|---|---|
 |  VALUE |  0  |  1  |  --  |  --  |  --  |  --  |  --  |
   
-  <br><br>
+  <br>Cell_2 = dp(1) + dp (0) =>>  Cell_3 = 0 + 1 =>> Cell_2 = 1<br>
+  
+| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|---|---|---|---|---|---|---|---|
+|  VALUE |  0  |  1  |  1  |  --  |  --  |  --  |  --  |
+  
+  <br>Cell_3 = dp(2) + dp (1) =>>  Cell_3 = 1 + 1 =>> Cell_3 = 2<<br>
+  
   
 | INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
 |---|---|---|---|---|---|---|---|
 |  VALUE |  0  |  1  |  1  |  2  |  --  |  --  |  --  |
   
-  <br><br>
+  <br>Cell_4 = dp(3) + dp (2) =>>  Cell_3 = 2 + 1 =>> Cell_4 = 3br>
   
 | INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
 |---|---|---|---|---|---|---|---|
 |  VALUE |  0  |  1  |  1  |  2  |  3  |  --  |  --  |
   
-  <br><br>
+  <br>Cell_5 = dp(4) + dp (3) =>>  Cell_3 = 3 + 2 =>> Cell_5 = 5<br>
   
 | INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
 |---|---|---|---|---|---|---|---|
 |  VALUE |  0  |  1  |  1  |  2  |  3  |  5  |  --  |
   
-  <br><br>
+  <br>Cell_6 = dp(5) + dp (4) =>>  Cell_3 = 5 + 3 =>> Cell_6 = 8<br>
   
 | INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
 |---|---|---|---|---|---|---|---|
 |  VALUE |  0  |  1  |  1  |  2  |  3  |  5  |  8  |
   
+<br><br>
+
+  <h3 align="center">We can find a recurrence relation formula for calculate the next position.<br><br>dp[n] = dp(n-1) + dp(n-2)  
+    <br><br>We need to use a array of size n. <br><br><br>That's why the Space complexity and Time complexity is linear.
+    
+  <br><br>
+  Time complexity = O(n) <hr> Space complexity = O(n) </h3>
+  
 </div>
+
+
