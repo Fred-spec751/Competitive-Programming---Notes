@@ -73,6 +73,7 @@
   </ol>
   
   <h2 align="left">Example - Fibonacci</h2>
-  <img src="./Images/FibonacciExample.jpg"> <br>
+  <h3 align="center">For Example: calculate fib(6)</h3><br>
+  <p align="center"><img src="./Images/FibonacciExample.png"></p><br>
   
 </div>
