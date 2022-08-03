@@ -74,6 +74,41 @@
   
   <h2 align="left">Example - Fibonacci</h2>
   <h3 align="center">For Example: calculate fib(6)</h3><br>
-  <p align="center"><img src="./Images/FibonacciExample.png"></p><br>
+  <p align="center"><img src="./Images/FibonacciExample.png"></p><br> <br>
+  
+  <h3 align="center">Table filling process<br>
+</div>
+
+
+<div align="center">
+  
+  
+| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|---|---|---|---|---|---|---|---|
+|  VALUE |  0  |  1  |  --  |  --  |  --  |  --  |  --  |
+  
+  <br><br>
+  
+| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|---|---|---|---|---|---|---|---|
+|  VALUE |  0  |  1  |  1  |  2  |  --  |  --  |  --  |
+  
+  <br><br>
+  
+| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|---|---|---|---|---|---|---|---|
+|  VALUE |  0  |  1  |  1  |  2  |  3  |  --  |  --  |
+  
+  <br><br>
+  
+| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|---|---|---|---|---|---|---|---|
+|  VALUE |  0  |  1  |  1  |  2  |  3  |  5  |  --  |
+  
+  <br><br>
+  
+| INDEX |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|---|---|---|---|---|---|---|---|
+|  VALUE |  0  |  1  |  1  |  2  |  3  |  5  |  8  |
   
 </div>
