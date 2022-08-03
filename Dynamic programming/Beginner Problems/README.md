@@ -65,7 +65,7 @@
   <h3 align="left">Identify states</h3>
   The sequence follows the rule that each number is equal to the sum of the preceding two numbers. The <b>states</b> are generate this number until to target. 
   
-  <h3 align="left">Identify steps for making a solution<h3 align="left">
+  <h3 align="left">Identify steps for making a solution</h3>
   <ol>
       <li>Parameters: here we have a unique parameter, so we need a 1D array.</li>
       <li>Case base: in this case we know the value for the positions (index): 0, 1, 2. The sequence begins with the following 3 integers: 0, 1, 1. </li>
@@ -73,5 +73,6 @@
   </ol>
   
   <h2 align="left">Example - Fibonacci</h2>
+  <img src="./Images/FibonacciExample.jpg"> <br>
   
 </div>
