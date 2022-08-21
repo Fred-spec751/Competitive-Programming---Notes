@@ -25,5 +25,5 @@
   
   De manera gráfica lo tenemos de la siguiente manera: 
   <br>
-  <img src = "Images/queue.png">
+  <img src="../Problems/Images/queue.png">
 </p>
