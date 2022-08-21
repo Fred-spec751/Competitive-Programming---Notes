@@ -1,4 +1,4 @@
-<h1 align="center">BadNeighbors – 2004 TCCC Round 4</h1>
+<h1 align="center">Plug-in</h1>
 
 <p>
   El problema puede ser resuelto de forma fácil usando una Stack, para esto se debe de realizar la observación de que los valores se deben de ir ingresando en una Stack
