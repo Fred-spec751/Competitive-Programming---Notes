@@ -114,3 +114,39 @@
   
   Ans: 6
 </p>
+
+```c++
+#include <bits/stdc++.h>
+
+int main(){
+	int n,t; cin>>n;
+	
+	queue<int> q;	// array 1 
+	vector<int> v(n+1);  // array 2 
+
+	for(int i=0;i<n;i++)	cin>>t, q.push(t);
+		
+	for(int i=0;i<n;i++)	cin>>v[i];
+	
+	int pointer=0;	// Position array 2
+	int aux,ans;
+
+	while(!q.empty())
+		{
+			if(q.front() == v[pointer])
+				{
+					q.pop();
+					pointer++;
+					ans++;
+				}
+			else
+				{
+					aux = q.front();
+					q.pop();
+					q.push(aux);
+					ans++;
+				}
+		}
+	cout<<ans;
+}
+```
