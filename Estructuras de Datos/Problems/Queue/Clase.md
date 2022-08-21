@@ -73,6 +73,44 @@
   
   De manera que podemos simular este problema directamente usando una Queue y así obtener una solución.
   
+  1 3 2<br>
+  2 3 1
+  <br>
   
+  Tal que lo que podemos hacer es que al ser aplicable la operación 1 solamente en el array 1, el array 2 estará solamente para realizar la comparación, es por esto 
+  mismo que solo será necesario realizar la almacenar el array 1 en la Queue para poder hacer esta operación, finalmente en caso de que coincidan los números de ambos
+  arrays pues solamente tendremos que hacer un pop a la Queue mientras que en el segundo array tan solo será necesario avanzar el contador.
   
+  Un ejemplo sería:
+  
+  1 3 2 -> De esta se estaría almacenando el array 1 en la Queue.
+  2 3 1 -> Array 2
+  
+  Entonces, pues hacemos pop y push en la Queue.
+  
+  Operación 1 - Costo: 1
+  3 2 1
+  2 3 1
+  
+  Operación 1 - Costo: 2
+  2 1 3
+  2 3 1
+  
+  Operación 2 - Costo: 3
+  1 3
+  3 1
+  
+  Operación 1 - Costo: 4
+  3 1
+  3 1
+  
+  Operación 2 - Costo: 5
+  1
+  1
+  
+  Operación 2 - Costo: 6
+  --Empty--
+  --Empty--
+  
+  Ans: 6
 </p>
