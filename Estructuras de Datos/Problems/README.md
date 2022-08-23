@@ -10,7 +10,6 @@
 <h3 align="center">Otras plataformas - Ejercicios vistos como ejemplo</h3>
 <ol>
   <li><a href="https://codeforces.com/problemset/problem/81/A">Plug-in</a></li>
-  <li><a href="https://codeforces.com/problemset/problem/81/A">Plug-in</a></li>
 </ol>
 
 
