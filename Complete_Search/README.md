@@ -6,3 +6,9 @@
   <li><a href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=666">725 - Division</a></li>
   
 </ol>
+
+<h3 align="left">Problemas a resolver</h3>
+<ol>
+  <li><a href="https://codeforces.com/contest/271/problem/A">A - Beautiful Year</a></li>
+  
+</ol>
