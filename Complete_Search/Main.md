@@ -29,6 +29,61 @@
   La forma usual será explorar todo el arreglo que se tenga o la información dada por el usuario para encontrar aquellas soluciones que cumplan con las restricciones 
   dada por el problema. Para entender será mejor verlo con un ejercicio.
   
+  <h3 align="left">11565 - Simple Equations</h3>
+  Tenemos las siguientes ecuaciones
+  <ul>
+	<li>x + y + z = A</li>
+	<li>xyz = B</li>
+	<li>x^2 + y^2 + z^2 = A</li>
+	</ul>
+  
+  Escribe un programa tal que encuentre los número x, y & z que satisfacen con las ecuaciones anteriores.
+  
+  Primero ser dará la cantidad de test y después los valores de A, B y C. Si no hay solución imprimir: No solution.
+  
+  Constrains: (1 ≤ A, B, C ≤ 10000).<br>
+  
+  Input:<br>
+  2<br>
+  1 2 3<br>
+  6 6 14<br>
+  
+  <br>
+  Ouput:<br>
+  No solution.<br>
+  1 2 3<br>
+  
+  <br>
+  Para esto será simplemente pensar en una forma de realizar la iteración sobre todos los números posibles que pueden llegar a tomar x, y & z, y la forma de realizar
+  este recorrimiento será por medio de un for tal que vaya del menor número que puede llegar a ser los valores buscados hasta su máximo valor. Simplemente se tendría
+  que tener for anidados para cada variable para después únicamente tener que verificar las ecuaciones y si todas cumplen arrojar un respuesta.
+  
+  Ahora, la dificultad solamente recae en ver en qué rango debemos de iterar, para esto se deberá de tener en cuenta aquella ecuación donde tendremos los valores
+  más grandes y esta es la tercera debido a que se opera con los valores al cuadrado.
+  
+  	(x*x) + (y*y) + (z*z) =C
+        si x= 1, y=2 y C=10000
+        z=+- raiz_cuadrado(9,995)
+        z = +- 99.97
+        Redondeando: z = +- 100
+
+  Así que solo será necesario tener tres for anidados:
+  
+  ```c++
+  	for(a=-100;a<=100;a++)
+	      for(b=-100;b<=100;b++)
+	            for(c=-100;c<=100;c++)
+                        if( a!=b && b!=c && a!=c && (a+b+c==A && a*b*c==B && ((a*a)+(b*b)+(c*c))==C) )
+                                {
+                                    if(sol<1){
+                                        printf("%d %d %d\n",a,b,c);
+                                        sol++;
+                                    }
+                                }
+  ```  
+  
+  <br>Veamos otro ejercicio...<br>
+  <hr>
   <h3 align="left">725 - Division</h3>
   Escribe un programa que encuentre y muestre en pantalla todos los pares de números de 5 dígitos tal que al ser dividos entre ellos nos de como resultado un número N 
   (siendo N un número proporcionado por el usuario).
