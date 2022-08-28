@@ -185,5 +185,25 @@
   <ul>
   
   Y esto es el precio a pagar por tener un algoritmo que siempre nos dará la respuesta correcta...
+	  
+	  
+	  
 </p>
 
+	
+<p>
+	<br><hr>
+	<h2 align="center">Forma recursiva - Backtracking</h2>
+	Esta forma de aplicar esta técnica será basada en dos cosas:
+	<ul>
+		<li>Árbol de decisiones.</li>
+		<li>Recursividad.</li>
+		</ul>
+	
+	Recordando la recursividad, tenemos que es necesario mandar a llamar una y otra vez así misma la función hasta encontrarnos con un caso base el cual tendrá
+	como objetivo romper con la recursividad e iniciar la construcción de la solución.
+	
+	Para esto, recordemos el siguiente algoritmo de Fibonacci recursivo:
+	
+	
+</p>
