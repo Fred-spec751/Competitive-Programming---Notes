@@ -200,10 +200,86 @@
 		<li>Recursividad.</li>
 		</ul>
 	
-	Recordando la recursividad, tenemos que es necesario mandar a llamar una y otra vez así misma la función hasta encontrarnos con un caso base el cual tendrá
-	como objetivo romper con la recursividad e iniciar la construcción de la solución.
-	
-	Para esto, recordemos el siguiente algoritmo de Fibonacci recursivo:
-	
+Recordando la recursividad, tenemos que es necesario mandar a llamar una y otra vez así misma la función hasta encontrarnos con un caso base el cual tendrá
+como objetivo romper con la recursividad e iniciar la construcción de la solución.	
+Para esto, recordemos el siguiente algoritmo de Fibonacci recursivo:
 	
 </p>
+
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+int fib(int n)
+    {
+        if(n==1 || n==0) return 1;
+        else             return fib(n-1)+fib(n-2);
+    }
+
+int main() {
+    int n; cin>>n;      for(int i=0;i<=n;i++)   cout<<fib(i)<<" ";
+	return 0;
+}
+
+```  
+
+De manera que este algoritmo se puede ver de manera gráfica por medio de un árbol binario:
+<p align="center"><img src="./Images/fibonacci.png"></p>
+
+Por ende se observa que se va expandiendo el árbol según va avanzando y esto se hace puramente con recursividad, en este caso la complejidad que se alcanza es O(2^n).
+Aquí debemos de hacer la señalación de que se está explorando y resolviendo todo.
+
+Una vez comprendido que la recursividad puede ser vista en forma de árbol podemos continuar con el tema de Backtracking, siendo lo primero...
+<h3 align="left">¿Qué es Backtracking?</h3>
+Es una técnica que tiene como característica principal retroceder, hasta en el nombre viene. Por ende, esta técnica se basa en retroceder en los resultados que 
+tenemos para poder crear otro resultado, otro camino, es conveniente ver esto por medio de un árbol de decisiones debido a que en este árbol se tendrá las diferentes
+decisiones que se han estado tomando para explorar y hallar otras posibles soluciones, o proupestas de ellas.
+
+Una forma sencilla de entender backtracking será por medio del algoritmo de exploración por profundidad DFS:
+<p align="center"><img src="./Images/dfs.jpg"></p>
+
+Es posible observar como primero se inicia desde el recorrido de la siguiente manera: 
+		
+		nodo_1 -> nodo_2 -> nodo_4  
+
+En este punto punto ya no es posible seguir y aún así tenemos nodos que siguen sin ser explorados, por lo tanto debemos de hacer un backtrack, un retroceso en los nodos tal que aparezca más nodos nuevos, y este es el caso de retroceder hasta el nodo 2 tal que ahí hay otro camino es para el nodo 5. Después se reotrocede hasta el nodo 1 para ir al nodo 3.
+
+Es de esta manera que estará funcionando backtracking, como retrocesos dentro de nuestro árbol para generar más solciones.
+
+Algo importante que se debe de tener en cuenta es que normalmente en los problemas de decisión u optimización las ramas del ábol tendrá un singficado, en otras palabras, tendrá un significado distinto el ir a la rama de la izquierda o la rama de la derecha siendo normalmente los siguientes singificados:
+
+<ul>
+	<li>Eliminar o añadir un elemento</li>
+	<li>Agregar un tipo de elemento 1 o agregar el tipo de elemento 2</li>
+	<li>Entre otras</li>
+</ul>
+
+Entonces, ir una rama u otra va a tener un significado para nuestro árbol de decisiones.
+
+Veamos un ejemplo sobre cómo sentar a tres niños de diferentes colores uno a lado de otro, o sea permutaciones:
+
+Para esto se tendrá que ver que es posible primero encontrar todas las formas al definir la posición de un determinado niño para variar a los otros dos niños restantes, lo cual perfectamente se puede representar en un árbol de decisiones:
+
+<p align="center"><img src="./Images/permColor.jpg"></p>
+
+Y lo importante es ver aquí el significado que tendrá las ramas para ir a la derecha o la izquierda, tal que primero se estará definiendo el color inicial para después escoger cualquier otro color, lo importante es ver aquí es que al momento de no tener más nodo que seguir explorando debemos de regresar nodos, o sea regresar un color para poder escoger el otro color que no se había escogido con anterioridad y así ir generando más soluciones. De esta forma podemos ir obteniendo todas las formas en que podemos acomodar a los niños de diferentes colores.
+
+La forma en que se podrá retroceder y seguir explorando será por medio de recursividad, tal que la recursividad nos va a servir para seguir profundizando en el árbol y también una vez que se llegue a una respuesta retroceder para explorar otra posible solución. Por otro lado será necesario tener un ciclo for para poder movernos entre los nodos de un mismo nivel, o sea los vecinos y no los hijos.
+
+Adicionalmente se puede comentar que la altura del árbol es de 4 debido a que se tiene 3 niños.
+
+<br><hr>
+<h3 align="left">Generando subsets</h3>
+Veamos el caso con la generación de subconjuntos, recordando un poco la generación de subconjuntos es:
+		
+		Cantidad de subconjuntos = 2^tamano_sunconjuntos
+Por ende: 
+		
+		S = {2, 4, 7}
+
+<p align="center"><img src="./Images/subsetsExample.jpg"></p>
+
+Recordando esto, podemos ver sobre la generación de subconjuntos por medio de un árbol de decisiones
+
+<p align="center"><img src="./Images/subsetTree.jpg"></p>
