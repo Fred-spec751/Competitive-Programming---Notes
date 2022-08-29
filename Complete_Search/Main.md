@@ -280,6 +280,16 @@ Por ende:
 
 <p align="center"><img src="./Images/subsetsExample.jpg"></p>
 
-Recordando esto, podemos ver sobre la generación de subconjuntos por medio de un árbol de decisiones
+Recordando esto, podemos ver sobre la generación de subconjuntos por medio de un árbol de decisiones:
 
 <p align="center"><img src="./Images/subsetTree.jpg"></p>
+
+Esto mismo da la oportunidad de distinguir el significado que tendrá las ramas tal que:
+
+<ul>
+	<li>Rama izquierda: no tomar elemento.</li>
+	<li>Rama derecha: tomar elemento.</li>
+</ul>
+
+<p align="center"><img src="./Images/subsetsCode.jpg"></p>
+
