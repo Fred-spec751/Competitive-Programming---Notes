@@ -20,8 +20,14 @@
   
   Entonces, ya podemos empezar a deducir el funcionamiento y/o uso de esta estructura de datos el cual es manipulación de strings por medio de los suffix.
   
+  Antes de continuar, es importante aclarar que a este punto lo que pienso que será mejor entender será ver Suffix Array como una especie de caja negra, tal que será primero importante saber qué hacer esta estructura de datos, para qué funciona ese código y cómo es que nos puede ayudar, o en qué situaciones, para poder realizar soluciones a problemas con strings. Entonces, primero vamos a enteder esta estructura de datos como una caja negra, tal que nosotros no nos va interesar (por el momento) cómo funciona cada línea de código sino que primero vamos a entender qué va a recibir de entrada y qué nos va a dar de salida.
+  
   Ya entrando en materia, se tiene que esta estructura de datos, Suffix Array, será una estructura que va tomar nuestro string original y lo va descomponer en sus 
   sufijos tal que se tendrá una lista de suffix. Entonces se tendrá lo siguiente:
   
-  Supongamos que tenemos la sigueinte situación: <br> string s = "";
+  Supongamos que tenemos la siguiente situación: <br> string s = "GATAGACA$";
+  <br>
+  Por ende, vamos a proceder a crear una lista sobre los suffix teniendo en mente el concepto de este, el cual fue presentado anteriormente.
+  
+  
 </p>
