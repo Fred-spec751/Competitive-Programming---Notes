@@ -29,5 +29,16 @@
   <br>
   Por ende, vamos a proceder a crear una lista sobre los suffix teniendo en mente el concepto de este, el cual fue presentado anteriormente.
   
+  <ul>
+  <li>GATAGACA$</li>
+  </ul>
+  
+  El siguiente paso será realizar un ordenamiento lexicográficamente, tal que el orden se haga por el primer caracter y en caso de ser el mismo caracter cambiar a la siguiente posición y realizar la comparación. Algo importante a tener en cuenta es que el caracter '$' es menor a cualquier letra, por ende esté será el primer caracter a colocar, y esto es importante tenerlo en cuenta debido a que será este caracter usado para la implementación de Suffix array (ya en código). 
+  
+  <ul>
+  <li>GATAGACA$</li>
+  </ul>
+  
+  Ahora, lo importante de esto es que debemos de hacer la observación de que 
   
 </p>
