@@ -67,5 +67,25 @@
   Por ende, nuestra cada estará funcionando de la siguiente manera: nosotros le vamos a dar un string y vamos a tener como salida un arreglo de enteros que corresponde
   a la posición de cada sufijo del arreglo original. Finalmente, la complejidad de este algoritmo ya de forma optimizada es de O(nlogn) por lo tano será poosible la resolución de problemas de 100K datos, o sea un string de 100k de longitud.
   
-  <h3 align="center">Aplicaciones</h3>
+  <h2 align="center">Aplicaciones</h2>
+  <h3 align="left">String Matching</h3>
+  Este problema se trata sobre encontrar un string patrón P dentro de un string T (el string original).
+  
+  Entonces, dado un string s será dado una cantidad de solicitudes tal que cada solicitud será conformado por un string p, tal que será necesario contestar si el string p aparece en el string s como un substring.
+  
+  Bien, para la resolución de este problema se tendrá que usar la siguiente información:
+  <ol>
+  <li>Los conceptos de suffix y prefix.</li>
+  <li>Un algoritmo de búsqueda.</li>
+  <li>Suffix array.</li>
+  </ol>
+  
+  Para iniciar, lo que se entender primero es que de los posibles strings que se tienen se pueden comportar como prefijos de los sufijos, un ejemplo de esto sería el siguiente caso:<br>
+  Sea p = "AG";
+  <br> Es el prefijo del sufijo: 3. AGACA$<br>
+  
+  Por ende, lo primero que podemos hacer en nuestro arreglo de sufijos es fijarnos en aquellos suffix que tengan como prefix el arreglo p, y será sobre entre estos sufijos los cuales se realizará la búsqueda del string p. Entonces, para hacer esto se podrá cortar el arreglo original en el tamaño del string p tal que ahora ya se tendrá un arreglo de sufijos de tamaño p tal que será ahí donde se realizará la búsqueda.
+  
+  
+  
 </p>
