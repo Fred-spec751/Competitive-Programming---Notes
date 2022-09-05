@@ -86,6 +86,23 @@
   
   Por ende, lo primero que podemos hacer en nuestro arreglo de sufijos es fijarnos en aquellos suffix que tengan como prefix el arreglo p, y será sobre entre estos sufijos los cuales se realizará la búsqueda del string p. Entonces, para hacer esto se podrá cortar el arreglo original en el tamaño del string p tal que ahora ya se tendrá un arreglo de sufijos de tamaño p tal que será ahí donde se realizará la búsqueda.
   
+ La búsqueda se realizará por medio de un algoritmo ya se ha trabajado y funciona en un tiempo logaritmico, ¿lo recuerdas? Claro, hablamos de binary Search, siendo este el algoritmo que vamos a tener que implementar para poder dar con la solución a este problema, pero la diferencia será que vamos a realizar comparaciones 
+ directamente con los caracteres y no con números, por ende será necesario tener en cuenta la siguiente función que nos va a facilitar las cosas.
+ 
+ 
+  <h4 align="left">Strcmp() </h4>
+  De esta función, que es de C, lo que nos interesa es lo que nos va devolver al momento de usarla, siendo que esta función es usada para realizar comparaciones entre
+  dos string de forma lexicográfica. Realizará la comparación de carácter por carácter hasta llegar al final o un termino NULL (en caso de no ser iguales). Nos va devolver tres posibles resultados. Es necesario que las comparaciones se hace desde el primer carácter.
+ <ol>
+  <li>Valor igual a 0: se determina que ambas cadenas son totalmente idénticas</li>
+  <li>Mayor que cero > 0: se determina que el carácter del string 1 (posición de la izquierda) se encuentra después que el carácter del string 2.</li>
+  <li>Menor que cero < 0: se determina que el carácter del string 1 (posición de la izquierda) se encuentra antes que el carácter del string 2.</li>  
+</ol>
+  
+  Después será necesario mantener en mente que se necesitará tanto el lower_bound como el upper_bound, los cuales son alteraciones del algoritmo original de binary search, siendo que lower_bound nos va dar el elemento menor o igual al búscado. Por otro lado, el upper_bound nos dará el elemento mayor.
+  
+  La necesidad de crear esto es para encontrar un rango, pero primero hay que ver la forma de crear un algoritmo tal que solo me encuentre sí existe, no importa si hay más de algún substring que cumpla con esta característica, solo me va importar que exista y por ende el algoritmo solo se deberá de enfocar en eso. Para esto se tendrá que plantear un algoritmo que sea capaz de usar  los valores que retonar la función planteada arriba tal que el funcionamiento será tal cual el que tiene una búsqueda binaria, siendo que el algoritmo queda de la siguiente manera:
+  
   
   
 </p>
