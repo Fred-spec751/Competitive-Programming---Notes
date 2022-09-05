@@ -30,15 +30,42 @@
   Por ende, vamos a proceder a crear una lista sobre los suffix teniendo en mente el concepto de este, el cual fue presentado anteriormente.
   
   <ul>
-  <li>GATAGACA$</li>
+  <li>0. GATAGACA$</li>
+  <li>1. ATAGACA$</li>
+  <li>2. TAGACA$</li>
+  <li>3. AGACA$</li>
+  <li>4. GACA$</li>
+  <li>5. ACA$</li>
+  <li>6. CA$</li>
+  <li>7. A$</li>
+  <li>8. $</li>
   </ul>
   
   El siguiente paso será realizar un ordenamiento lexicográficamente, tal que el orden se haga por el primer caracter y en caso de ser el mismo caracter cambiar a la siguiente posición y realizar la comparación. Algo importante a tener en cuenta es que el caracter '$' es menor a cualquier letra, por ende esté será el primer caracter a colocar, y esto es importante tenerlo en cuenta debido a que será este caracter usado para la implementación de Suffix array (ya en código). 
   
   <ul>
-  <li>GATAGACA$</li>
+  <li>8. $</li>
+  <li>7. A$</li>
+  <li>5. ACA$</li>
+  <li>3. AGACA$</li>
+  <li>1. ATAGACA$</li>
+  <li>6. CA$</li>
+  <li>4. GACA$</li>
+  <li>0. GATAGACA$</li>
+  <li>2. TAGACA$</li>
   </ul>
   
-  Ahora, lo importante de esto es que debemos de hacer la observación de que 
+  Ahora, ya que tenemos la lista ordenada lo siguiente será definir y ver qué es el suffix array, y contrario a lo que se podría pensar en un principio el arreglo de sufijos no estará constituido realmente por los sufijos (esas cadenas), sino que será las posiciones, o sea que el suffix array es un arreglo de enteros tal que corresponden a las posiciones de los sufijos dentro del arreglo original.
   
+  Para entender esto, podemos guardar estos sufijos en un arreglo tal que se tendrá lo siguiente:<br>
+  suffix_array = {8,7,5,3,1,6,4,0,2};<br>
+  <br>
+  Por ende será posible acceder a cada sufijo por medio de cada posición porque en sí la posición que se guarda estará correspondiendo al prefijo de cada sufijo, o sea se está guardando la posición del primer caracter de cada sufijo, tal que yo sé que apartir de ahí y todo lo que está a la derecha corresponde a un sufijo.
+  
+  Esto es Suffix array.
+  
+  Por ende, nuestra cada estará funcionando de la siguiente manera: nosotros le vamos a dar un string y vamos a tener como salida un arreglo de enteros que corresponde
+  a la posición de cada sufijo del arreglo original.
+  
+  <h3 align="center">Aplicaciones</h3>
 </p>
