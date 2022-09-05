@@ -67,11 +67,11 @@ int main()
 		for(int  i = 0;i<n;i++)
 		    {
 		        cout<<SA[i]<<"\t";
-		        for(int  j = SA[i];j<n;j++)
+		        /*for(int  j = SA[i];j<n;j++)	// Comment, only suffix array.
 		            {
 		                cout<<T[j];
 		            }
-		        cout<<endl;
+		        cout<<endl;*/
 		    }
 		return 0;
 	}
