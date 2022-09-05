@@ -65,7 +65,7 @@
   Esto es Suffix array.
   
   Por ende, nuestra cada estará funcionando de la siguiente manera: nosotros le vamos a dar un string y vamos a tener como salida un arreglo de enteros que corresponde
-  a la posición de cada sufijo del arreglo original.
+  a la posición de cada sufijo del arreglo original. Finalmente, la complejidad de este algoritmo ya de forma optimizada es de O(nlogn) por lo tano será poosible la resolución de problemas de 100K datos, o sea un string de 100k de longitud.
   
   <h3 align="center">Aplicaciones</h3>
 </p>
