@@ -109,7 +109,7 @@
 
 ```c++
 #include<bits/stdc++.h>
-#define MAX_N 300010
+#define MAX_N 400010
 using namespace std;
 
 string T;
@@ -122,7 +122,7 @@ int c[MAX_N];
 void countingSort(int k)
 	{
 		long long i, sum, maxi = max(300010,n);
-		memset(c,0,size(c));
+		memset(c,0,sizeof(c));
 		for(int i=0;i<n;i++)
 			{
 				c[i+k<n?RA[i+k]:0]++;
@@ -224,3 +224,101 @@ int main()
 		return 0;
 	}
 ```
+
+
+<p>
+	<h3 align="left">Finding LCP of two suffixes</h3>
+	Este problema es sobre encontrar el longest Common prefix, por ende lo importante será volver a enfocarse en el arreglo de enteros que ya está ordenado de acuerdo a los sufijos de nuestro string original. Primero, esto es tal cual suena, calcular el mayor prefijo, no obstante lo que se hará primero es calcular el prefijo mayor entre los consecutivos sufijos del suffix array, para después encontrar lo solicitad.
+	
+La cuestión es primero encontrar el LCP de cada dos sufijos consecutivos del suffix array, con esta información nosotros vamos a poder encontrar el LCP en dos posiciones aleatorias, tal que será posible entonces obtener el LCP entre la posición inicial y final, o sea el LCP de todo el string. Por ende, lo primero a realizar es construir el arreglo de LCP entre dos sufijos consecutivos y para esto será simplemente tomar dos sufijos y comparar sus carácteres tal que dejamos de contar hasta que uno sea diferente, y colocamos el número el cual ya corresponde al lcp de esos dos sufijos, de forma práctica se tiene lo siguiente
+
+Nota: recordemos que en la implementación se tiene una posición extra en mi suffix array el cual corresponde a '$' o simplemente un vacío.
+
+  <ul>
+   <li>9. </li>
+  <li>8. $</li>
+	<li>LCP = 0</li>
+  <li>7. A$</li>
+	<li>LCP = 0</li>
+  <li>5. ACA$</li>
+	<li>LCP = 1</li>
+  <li>3. AGACA$</li>
+	<li>LCP = 1</li>
+  <li>1. ATAGACA$</li>
+	<li>LCP = 1</li>
+  <li>6. CA$</li>
+	<li>LCP = 0</li>
+  <li>4. GACA$</li>
+	<li>LCP = 0</li>
+  <li>0. GATAGACA$</li>
+	<li>LCP = 2</li>
+  <li>2. TAGACA$</li>
+	<li>LCP = 0</li>
+  </ul>
+  
+  
+  Ahora, es importante poder construir este arreglo ya que una vez que tenemos esto es posible poder consultar el LCP entre dos posiciones de mi arreglo, y para esto la respuesta será el número mínimo entre esas dos posiciones:
+  
+  ans = min (Lcp( i, j ))
+  
+  
+  Pero, ¿por qué el mínimo? Para poder entender esto se debe hacer la observación de que la cantidad mínima será con toda seguridad el que siempre estará presente en todos los suffix, porque es el mínimo, no tomamos el máximo porque solo estará presente en un caso o en algunos, pero el mínimo estará para:
+  
+  A<br>
+  AB<br>
+  ABC<br>
+  
+  Podemos decir que el máximo de LCP entre dos casillas es de 2, no obstante el LCP de todos es de 1, siendo A porque este es el mínimo que se encuentra presente en todo el string. Entonces, finalmente esto se resume en encontrar el mínimo en un segmento de mi suffix array.
+  
+  Un ejemplo ya en mi string es LCP (4,7), en este caso busco esas posiciones dentro de mi suffix array y al estar asociado ya el arreglo de diferencias, solo tengo que ver el mínimo en ese segmento
+  
+  <ul>
+	<li>7. A$</li>
+	<li>LCP = 0</li>
+  <li>5. ACA$</li>
+	<li>LCP = 1</li>
+  <li>3. AGACA$</li>
+	<li>LCP = 1</li>
+  <li>1. ATAGACA$</li>
+	<li>LCP = 1</li>
+  <li>6. CA$</li>
+	<li>LCP = 0</li>
+  <li>4. GACA$</li>
+	<li>LCP = 0</li>
+	</ul>
+  
+  
+  Tal que el mínimo es 0, o sea que el mínimo prefijo entre esas dos posiciones es 0, siendo que no hay.
+  <br>
+  string s = "GATAGACA$";<br>
+  Podemos observar que el segmento que se va analizar es: AGAC, tal que el prefijo pues en sí 0.
+  
+  <br> Un caso cuando es diferente de cero
+  <br>LCP(3,5)
+  <br>
+  
+  <ul>
+	<li>5. ACA$</li>
+	<li>LCP = 1</li>
+  <li>3. AGACA$</li>
+	<li>LCP = 1</li>
+	</ul>
+  
+  <br>
+  string s = "GATAGACA$";<br>
+  En este caso el menor es 1, viendo el segmento que se va analizar: AGA
+  
+  
+  La implementación de esto se hace en tiempo lineal ya que solo estamos explorando por aquellos que no han sido contados, tal que los contados ya se van teniendo en cuenta, y los que no han aparecido en anteriores se debe a que todavía no es su turno de aparecer.
+  
+  Primero, para esto el algoritmo lo que hace es estar en la posición del sufijo más largo para después calcular el LCP anterior a ese sufijo largo, osea el LCP anterior al sufijo actual. La forma de hacer esto será tal cual realizar la comparación de estos dos sufijos
+  
+  
+<ul>
+  <li>4. GACA$</li>
+  <li>0. GATAGACA$</li>
+  </ul>
+  
+  
+  Se cuentan los carácteres que coinciden, 2. Podemos ir haciendo esto para toda slas demás posiciones, siendo la siguiente para el sufijo de la posición 1. No obstante, hay algo interesante que debemos de observar y es que como los sufijos se van creando eliminando el primer carácter, entonces podemos decir que el sufijo en la posición 1 será creado eliminando el primer carácter dle sufijo en la posición 0, tal que vamos a tener que de el sufijo de la posición 0 y el sufijo en la posición 1 se tendrá k-1 caracteres iguales (siendo k la longitud de carácteres iguales). NO OBSTANTE, aquí entra la importancia de que el arreglo esté ordenado, debido a que una vez que el arreglo esté ordenado, con ellos que los sufijos estén ordenado lexicográficamente, se tendrá que los sufijos entre estas posiciones dentro de mi suffix array tendrán k-1 carácteres iguales. Por ende nosotros ya no debemos de chcear estas k-1 caracteres porque ya sabemos que serán iguales, solo tendrémos que checar los carácteres que le siguen de estos k-1 caracteres,m porque ahí si no sabemos si son o no iguales
+  </p>
