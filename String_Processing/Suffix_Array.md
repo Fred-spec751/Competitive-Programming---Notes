@@ -320,5 +320,62 @@ Nota: recordemos que en la implementación se tiene una posición extra en mi su
   </ul>
   
   
-  Se cuentan los carácteres que coinciden, 2. Podemos ir haciendo esto para toda slas demás posiciones, siendo la siguiente para el sufijo de la posición 1. No obstante, hay algo interesante que debemos de observar y es que como los sufijos se van creando eliminando el primer carácter, entonces podemos decir que el sufijo en la posición 1 será creado eliminando el primer carácter dle sufijo en la posición 0, tal que vamos a tener que de el sufijo de la posición 0 y el sufijo en la posición 1 se tendrá k-1 caracteres iguales (siendo k la longitud de carácteres iguales). NO OBSTANTE, aquí entra la importancia de que el arreglo esté ordenado, debido a que una vez que el arreglo esté ordenado, con ellos que los sufijos estén ordenado lexicográficamente, se tendrá que los sufijos entre estas posiciones dentro de mi suffix array tendrán k-1 carácteres iguales. Por ende nosotros ya no debemos de chcear estas k-1 caracteres porque ya sabemos que serán iguales, solo tendrémos que checar los carácteres que le siguen de estos k-1 caracteres,m porque ahí si no sabemos si son o no iguales
+  Se cuentan los carácteres que coinciden, 2. Podemos ir haciendo esto para toda slas demás posiciones, siendo la siguiente para el sufijo de la posición 1. No obstante, hay algo interesante que debemos de observar y es que como los sufijos se van creando eliminando el primer carácter, entonces podemos decir que el sufijo en la posición 1 será creado eliminando el primer carácter dle sufijo en la posición 0, tal que vamos a tener que de el sufijo de la posición 0 y el sufijo en la posición 1 se tendrá k-1 caracteres iguales (siendo k la longitud de carácteres iguales). NO OBSTANTE, aquí entra la importancia de que el arreglo esté ordenado, debido a que una vez que el arreglo esté ordenado, con ellos que los sufijos estén ordenado lexicográficamente, se tendrá que los sufijos entre estas posiciones dentro de mi suffix array tendrán k-1 carácteres iguales. Por ende nosotros ya no debemos de chcear estas k-1 caracteres porque ya sabemos que serán iguales, solo tendrémos que checar los carácteres que le siguen de estos k-1 caracteres,m porque ahí si no sabemos si son o no iguales.
+  
+  <br> No vamos a pasar de realizar 2n checadas a lo mucho.
+  <br>
+  Lo anterior será aplicado tanto para el arreglo i como su previo, en este caso el 0 y el sufijo previo a este, tal que al aumentar y tener el sufijo 1 y el sufijo previo a este se estará cumpliendo lo anterior.
+  
+  Veamos entonces el siguiente caso cuando vamos por el sufijo 1
+  
+  <ul>
+  <li>8. $</li>
+  <li>7. A$</li>
+  <li>5. ACA$</li>
+  <li>3. AGACA$</li>
+	<li>1</li>
+  <li>1. ATAGACA$</li>
+  <li>6. CA$</li>
+  <li>4. GACA$</li>
+	<li>2</li>
+  <li>0. GATAGACA$</li>
+  <li>2. TAGACA$</li>
+  </ul>
+  </p>
+
+Entonces para el sufijo ya se estará cumpliendo la regla anterior
+<ul>
+  <li>8. $</li>
+  <li>7. A$</li>
+  <li>5. ACA$</li>
+  <li>3. AGACA$</li>
+	<li>1</li>
+  <li>1. ATAGACA$</li>
+  <li>6. CA$</li>
+  <li>4. GACA$</li>
+	<li>2</li>
+  <li>0. GATAGACA$</li>
+	<li>0</li>
+  <li>2. TAGACA$</li>
+  </ul>
+  
+  Tal que la cantidad de carácteres iguales que había entre i+1(sufijo 1) y j+1(sufijo previo al 1) es de k=1, entonces k=0
+  <br>
+  Para el sufijo 3 se tiene que si el sufijo 2 y el precio tiene 0 carácteres, entonces el 3 también tendrá 0 carácteres iguales, por ende se tendrá que realizar el conteo<br>
+  
+  <ul>
+  <li>8. $</li>
+  <li>7. A$</li>
+  <li>5. ACA$</li>
+	<li>1</li>
+  <li>3. AGACA$</li>
+	<li>1</li>
+  <li>1. ATAGACA$</li>
+  <li>6. CA$</li>
+  <li>4. GACA$</li>
+	<li>2</li>
+  <li>0. GATAGACA$</li>
+	<li>0</li>
+  <li>2. TAGACA$</li>
+  </ul>
   </p>
