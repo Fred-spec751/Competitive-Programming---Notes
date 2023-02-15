@@ -14,13 +14,28 @@ Therefore, the instructions are actually a set of bits.
 What is the purpose of this explanation?
 Well, the powerful thing about this concept is in the idea of an integer, the structure of an integer in C++ or any language, well the structure of an integer in computer science there are bits. So an integer is just a set of bits that are stored in memory consecutively, simple as that.
   <hl>
-  <h3>BitMask<h3>
+  Thus, here it is possible to represent in different ways the concept of an integer, but it is mandatory to understand the fact that an integer is a set of bits. When we remember the value of an integer we can know the fact that the size of an integer is 4 bytes.
+  
+  <hl>
+  
+  <h3>BitMask</h3>
   Bitmasking is a programming technique that involves using bitwise operations to manipulate and extract information from an integer number in its binary form. Essentially, it involves using a binary mask or pattern to select, modify, or compare a specific
   
    <hl>
   For example, if we want to get the value of the bit at position 3 in an integer number, we can apply a bitwise AND operation between the number and a binary mask that has a 1 at position 3 and zeros at all other positions. If the result of this operation is non-zero, then we know that the bit at position 3 of the number is 1; otherwise, it is 0.
      
   <hl>
+  Pay attention here, because we have another important concept about bits, and that is Bitwise.
+  <hl>
   
+  <h3>Bitwise</h3>
+  Bitwise refers to the manipulation of data at the level of individual bits. Bitwise operations, such as AND, OR, XOR, and bit shifting, are used to manipulate and compare data in its binary representation.
+  <hl>
+  
+  <h3>Aplications</h3>
+  
+  
+  <hl>
+  This is Bit manipulation.
     
 </p>
