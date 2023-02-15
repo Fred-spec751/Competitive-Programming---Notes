@@ -31,8 +31,7 @@ Well, the powerful thing about this concept is in the idea of an integer, the st
   <h3>Bitwise</h3>
   Bitwise refers to the manipulation of data at the level of individual bits. Bitwise operations, such as AND, OR, XOR, and bit shifting, are used to manipulate and compare data in its binary representation.
   
-    
-    <hl>
+  <br>
   
   <h3>Operations</h3>
   <p align="center"><img src="./Images/Bitwise.png"></p><br> <br>
@@ -41,17 +40,21 @@ Well, the powerful thing about this concept is in the idea of an integer, the st
   <ol>
     <li>Multiply/divide an integer by 2:  we only need to shift the bits in the integer left/right, respectively.
       <br> 34 ==  100010 
-        <br> 34*2 == 68 == 1000100 == S << 1
+      <br> 34*2 == 68 == 1000100 == S << 1
       <br> S >> 2 = S / 4 = 17 = 10001
     </li>
-    
     <li>To set/turn on the j-th: the bitwise OR operation.
-      <br>  100010 OR 001000 == 101010
+    <br>  100010 || 001000 == 101010
     </li>
-    
-    <li> To check if the j-th item of the set is on: use the bitwise AND operation
+    <li> To check if the j-th item of the set is on: use the bitwise AND operation.
+    <br>  101010 && 001000 ==  001000. If the value is non-zero, the bit is on.
     </li>
-    
+    <li> To clear/turn off the j-th item of the set
+    <br> We start with one, then shift left 'j' times, then apply NOT. Finally, we can apply AND and turn off the j-th bit:  ~(1 << j).
+    <br> 101010 && (~(1 << j)) == 101010 && 111101 == 101000 
+    </li>
+    <li>Turn on all bits in a set of size n: use (1 << n) - 1, but it is possible to have an overflow.
+    </li>
     </ol>
     
     
